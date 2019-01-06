@@ -8,9 +8,18 @@ outlets = 3
 inlets = 1
 
 function process(phrase_index){
+	doprocess(phrase_index, 0)
+}
+
+function process_start_task(phrase_index){
+	doprocess(phrase_index, 1)
+	///TODO unmute
+}
+
+function doprocess(phrase_index, force){
 	
 	//bail early if the number is the same
-	if (phrase_index == current_index){
+	if (phrase_index == current_index && !force){
 		return
 	}
 	
@@ -19,7 +28,6 @@ function process(phrase_index){
 	//Safety check that all things exist
 	if (data && freq){
 		//output message to set channel count
-		outlet(1, 'stop')
 		d.replace('active', phrase_index)
 		outlet(0, "chans " + data.length)
 		for ( var i = 0; i < data.length; i++ )
@@ -36,8 +44,6 @@ function process(phrase_index){
 			}	
 		}
 		current_index = phrase_index
-		t = new Task(startdac);
-		t.schedule(1000)
 	} else {
 		_fail('Data index unavailable: '+phrase_index)
 		outlet(2, 'bang')
@@ -46,7 +52,23 @@ function process(phrase_index){
 };
 
 function startdac(){
-	outlet(1, 'startwindow')
+	// todo would be cool to make this dynamic with the max channel number
+	outlet(0, 'chans 24')
+	//TODO mute
+	outlet(1, 'start')
+	// We need to set the actual values as part of a task because otherwise it will
+	// incorrectly use the first values channel count as the max.
+	// Using a task allows us to introduce a delay to handle this
+	if (current_index == -1){
+			current_index = 0
+	}	
+	t = new Task(process_start_task, this, current_index)
+	t.schedule(50)
+};
+
+function stopdac(){
+	// todo would be cool to make this dynamic with the max channel number
+	outlet(1, 'stop')
 };
 
 function _fail(msg){
