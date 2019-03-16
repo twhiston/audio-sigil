@@ -28,7 +28,7 @@ function process_dedupe(linesplit){
 	d.remove('data')
 	for (var i = 0, len = linesplit.length; i < len; i++) {
 		if(linesplit[i]){
-			var split = linesplit[i].replace(/\s+/g, '').toLowerCase().split("").filter(function(x, n, s) {
+			var split = linesplit[i].replace(/\s+/g, '').toLowerCase().replace(/[^A-Za-z0-9_]/g,"").split("").filter(function(x, n, s) {
   				return s.indexOf(x) == n
 			}).join("");
 			d.replace('data::' + i, split)

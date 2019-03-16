@@ -4,6 +4,8 @@ setoutletassist(-1,outlet_help);
 var d = new Dict("settings");
 var current_index = -1
 
+var out_chan = 0
+
 outlets = 3
 inlets = 1
 
@@ -29,15 +31,20 @@ function doprocess(phrase_index, force){
 	if (data && freq){
 		//output message to set channel count
 		d.replace('active', phrase_index)
-		outlet(0, "chans " + data.length)
+		
+		out_chan = out_chan ? 0 : 1;
+		
+		outlet(0, out_chan + " chans " + data.length)
+		
 		for ( var i = 0; i < data.length; i++ )
 		{
 			var ch = data.charAt(i)
 			var f = freq.get(ch)
 			if(f){
 				var index = i + 1
-				outlet(0, 'setvalue ' +index + ' ' + f)
+				outlet(0, out_chan + ' setvalue ' +index + ' ' + f)
 			} else {
+				out_chan = out_chan ? 0 : 1;
 				_fail('Character translation not possible, exiting')
 				outlet(1, 'stop')
 				return
@@ -52,8 +59,11 @@ function doprocess(phrase_index, force){
 };
 
 function startdac(){
+	
+	out_chan = 0
 	// todo would be cool to make this dynamic with the max channel number
-	outlet(0, 'chans 24')
+	outlet(0, '0 chans 24')
+	outlet(0, '1 chans 24')
 	//TODO mute
 	outlet(1, 'start')
 	// We need to set the actual values as part of a task because otherwise it will
@@ -84,6 +94,8 @@ function outlet_help(num)
     	break;
   		case 1:
     		assist("dac control");
+		case 2:
+    		assist("bang on error");
     	break;
 	} 
 	
