@@ -1,11 +1,5 @@
 {
-	"active": 0,
-	"data" : 	{
-		"0" : "mywilfornesh"
-	},
-	"input" : 	{
-		"0" : "my will for new shoes"
-	},
+	"active" : 0,
 	"freq" : 	{
 		"a" : 20.0,
 		"b" : 40.0,
@@ -34,4 +28,23 @@
 		"y" : 500.0,
 		"z" : 520.0
 	}
+,
+	"input" : 	{
+		"0" : "my will for new shoes",
+		"1" : "my",
+		"2" : "will",
+		"3" : "for",
+		"4" : "new",
+		"5" : "shoes"
+	}
+,
+	"data" : 	{
+		"0" : "mywilfornesh",
+		"1" : "my",
+		"2" : "wil",
+		"3" : "for",
+		"4" : "new",
+		"5" : "shoe"
+	}
+
 }
