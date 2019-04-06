@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1109.0, 787.0 ],
+		"rect" : [ 34.0, 79.0, 1112.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -247,11 +247,11 @@
 					"presentation_rect" : [ 373.697629928588867, 165.07293701171875, 90.74273681640625, 43.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_longname" : "live.dial",
+							"parameter_mmax" : 10000.0,
 							"parameter_shortname" : "live.dial",
 							"parameter_type" : 0,
-							"parameter_unitstyle" : 0,
-							"parameter_longname" : "live.dial",
-							"parameter_mmax" : 10000.0
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -688,8 +688,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 697.0823974609375, -14.606741905212402, 73.0, 22.0 ],
-					"text" : "loadmess 0."
+					"patching_rect" : [ 697.0823974609375, -14.606741905212402, 93.0, 22.0 ],
+					"text" : "loadmess set 0."
 				}
 
 			}
@@ -700,8 +700,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 697.0823974609375, 160.564376831054688, 87.0, 22.0 ],
-					"text" : "loadmess 440."
+					"patching_rect" : [ 697.0823974609375, 160.564376831054688, 106.0, 22.0 ],
+					"text" : "loadmess set 440."
 				}
 
 			}
@@ -760,7 +760,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "int" ],
-					"patching_rect" : [ 603.96630859375, 30.337081909179688, 29.5, 22.0 ],
+					"patching_rect" : [ 603.96630859375, 29.337081909179688, 29.5, 22.0 ],
 					"text" : "t b i"
 				}
 
@@ -785,7 +785,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 697.0823974609375, 11.000000953674316, 58.0, 21.0 ],
+					"patching_rect" : [ 627.0, -8.999999046325684, 58.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 314.844696044921875, 307.947067260742188, 59.0, 21.0 ],
 					"text" : "offset"
@@ -1164,7 +1164,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 102.02734375, 209.655731201171875, 91.52734375, 22.0 ],
-									"text" : "10000"
+									"text" : "472"
 								}
 
 							}
@@ -2295,10 +2295,10 @@
 					"presentation_rect" : [ 946.211441040039062, 351.848949432373047, 50.0, 55.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_longname" : "Midi Offset",
 							"parameter_shortname" : "Midi Offset",
 							"parameter_type" : 0,
-							"parameter_unitstyle" : 0,
-							"parameter_longname" : "Midi Offset"
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -2530,7 +2530,7 @@
 				"box" : 				{
 					"id" : "obj-15",
 					"maxclass" : "number",
-					"maximum" : 6,
+					"maximum" : 5,
 					"minimum" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -2598,13 +2598,13 @@
 					"presentation_rect" : [ 946.211441040039062, 219.225555419921875, 163.0, 39.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "Volume",
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "Volume",
 							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ]
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "Volume",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
 						}
 
 					}
@@ -2911,7 +2911,7 @@
 				"box" : 				{
 					"fontname" : "Ableton Sans Medium",
 					"id" : "obj-53",
-					"linecount" : 7,
+					"linecount" : 6,
 					"maxclass" : "textedit",
 					"numinlets" : 1,
 					"numoutlets" : 4,
@@ -2920,10 +2920,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 14.0, 94.337066650390625, 225.0, 64.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 7,
+					"presentation_linecount" : 6,
 					"presentation_rect" : [ 11.741989135742188, 15.773834228515625, 352.74273681640625, 226.726165771484375 ],
 					"rounded" : 0.0,
-					"text" : "wild \nsilverings \nsilent\ngleam\nceridwens\nphiltre\nepisteme"
+					"text" : "my will for new shoes\nmy\nwill\nfor\nnew\nshoes"
 				}
 
 			}
@@ -4023,9 +4023,9 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-86" : [ "Midi Offset", "Midi Offset", 0 ],
 			"obj-28" : [ "Volume", "Volume", 0 ],
 			"obj-158" : [ "live.dial", "live.dial", 0 ],
-			"obj-86" : [ "Midi Offset", "Midi Offset", 0 ],
 			"parameterbanks" : 			{
 
 			}
